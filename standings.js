@@ -49,7 +49,7 @@ const getShortlog = (dir, cb) => {
       console.log('error', err)
       shortlogEntries.push('')
     }
-    if (shortlogEntries.length === gitDirs.length) {
+    if (shortlogEntries.length === gitDirsLen) {
       cb(shortlogEntries)
     }
   })
@@ -127,6 +127,7 @@ const handleShortlogs = arr => {
 const gitDirs = getDirectories(root).filter(dir => {
   return getDirectories(path.join(root, dir)).includes('.git') && dir !== thisDir
 })
+const gitDirsLen = gitDirs.length
 
 /**
  *
