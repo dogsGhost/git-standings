@@ -1,0 +1,18 @@
+- var limitString = limit ? limit + ' ' : ''
+doctype html
+html
+  head
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Developer Standings
+    link(rel='stylesheet', href='/style.css')
+  body
+    h1 Developer Standings for the last #{time}
+    h2 Last Updated #{lastUpdated}
+    h3 Top #{limitString}Contributors
+    ol
+      each ranking in rankings
+        li #{ranking.name}: #{ranking.count} code commits
+    h3 Tracked Projects
+    ul
+      each project in projects
+        li= project
