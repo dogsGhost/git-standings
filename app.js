@@ -11,6 +11,7 @@ const data = JSON.parse(fs.readFileSync(path.join(__dirname, 'data.json'), 'utf8
 
 app.use('/', (req, res) => res.render('index', data))
 
-app.listen(3000, () => {
-  if (process.env.NODE_ENV !== 'production') console.log('running on port 3000')
+const port = process.env.PORT || 3000
+app.listen(port, () => {
+  if (process.env.NODE_ENV !== 'production') console.log(`running on port ${port}`)
 })

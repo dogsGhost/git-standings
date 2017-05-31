@@ -17,6 +17,8 @@ Clone repo into the same folder as the rest of your git projects.
 - Generate data: `npm run gs`.
 - Start local server on port 3000 to view results: `npm start`.
 
+**Note**: If planning to deploy to Heroku, you will have to remove `data.json` from `.gitignore` and commit your generated data file.
+
 ## Options
 
 - `domain`: Restrict the contributors list to only those with email addresses that use the given domain, such as `'gmail'` or `'gmail.com'`. Omitting this option returns all contributors.
