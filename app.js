@@ -7,9 +7,10 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
 app.use(express.static(path.join(__dirname, 'public')))
 
-const data = JSON.parse(fs.readFileSync(path.join(__dirname, 'data.json'), 'utf8'))
-
-app.use('/', (req, res) => res.render('index', data))
+app.use('/', (req, res) => {
+  const data = JSON.parse(fs.readFileSync(path.join(__dirname, 'data.json'), 'utf8'))
+  res.render('index', data)
+})
 
 const port = process.env.PORT || 3000
 app.listen(port, () => {
