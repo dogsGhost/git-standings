@@ -117,7 +117,7 @@ const handleShortlogs = arr => {
     rankings,
     projects,
     time: options.time,
-    limit: options.limit,
+    limit: rankings.length < options.limit ? rankings.length : options.limit,
     lastUpdated: formatDate(new Date()),
   }))
 }
